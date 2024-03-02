@@ -23,8 +23,9 @@ System::Void GoGO::MyForm::close_button_Click(System::Object^ sender, System::Ev
 System::Void GoGO::MyForm::start_button_Click(System::Object^ sender, System::EventArgs^ e)
 {
     int CoountryNumber = 0;
-    int country_count = 12;
-    CoountryNumber = rand()% country_count;
+    int Country_count = 12;
+    int Ideology = 0;
+    CoountryNumber = rand()% Country_count;
 
     switch (CoountryNumber)
     {
@@ -74,11 +75,33 @@ System::Void GoGO::MyForm::start_button_Click(System::Object^ sender, System::Ev
         break;
     case 12:
         Result->Visible = true;
-        Result->Text = "Польшая";
+        Result->Text = "Польша";
         break;
     default:
        break;
     }
-   
+    if (randombox->Checked)
+    {
+        Ideology = rand() % 4;
+        switch (Ideology)
+        {
+        case 1:
+            Ideolog->Visible = true;
+            Ideolog->Text = "Fashicst";
+            break;
+        case 2:
+            Ideolog->Visible = true;
+            Ideolog->Text = "Democrati";
+            break;
+        case 3:
+            Ideolog->Visible = true;
+            Ideolog->Text = "Communist-socialist";
+            break;
+        case 4:
+            Ideolog->Visible = true;
+            Ideolog->Text = "Neutraleteo";
+            break;
+        }
+    }
     
 };

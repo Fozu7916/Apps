@@ -49,6 +49,7 @@ namespace GoGO {
 
 	private: System::Windows::Forms::Label^ Result;
 	private: System::Windows::Forms::Button^ start_button;
+	private: System::Windows::Forms::Label^ Ideolog;
 
 
 
@@ -74,6 +75,7 @@ namespace GoGO {
 			this->randombox = (gcnew System::Windows::Forms::CheckBox());
 			this->Result = (gcnew System::Windows::Forms::Label());
 			this->start_button = (gcnew System::Windows::Forms::Button());
+			this->Ideolog = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// close_button
@@ -157,12 +159,28 @@ namespace GoGO {
 			this->start_button->UseVisualStyleBackColor = true;
 			this->start_button->Click += gcnew System::EventHandler(this, &MyForm::start_button_Click);
 			// 
+			// Ideolog
+			// 
+			this->Ideolog->AutoSize = true;
+			this->Ideolog->BackColor = System::Drawing::Color::Black;
+			this->Ideolog->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 21.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->Ideolog->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->Ideolog->Location = System::Drawing::Point(211, 428);
+			this->Ideolog->Name = L"Ideolog";
+			this->Ideolog->Size = System::Drawing::Size(64, 33);
+			this->Ideolog->TabIndex = 6;
+			this->Ideolog->Text = L"υσι";
+			this->Ideolog->Visible = false;
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(997, 615);
+			this->Controls->Add(this->Ideolog);
 			this->Controls->Add(this->start_button);
 			this->Controls->Add(this->Result);
 			this->Controls->Add(this->randombox);
