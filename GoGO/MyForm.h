@@ -21,6 +21,8 @@ namespace GoGO {
 			//
 			//TODO: добавьте код конструктора
 			//
+			
+			
 		}
 
 	protected:
@@ -34,22 +36,41 @@ namespace GoGO {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Button^ close_button;
+	private: System::Windows::Forms::Button^ Close_button;
+	protected:
+
+
+
+	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Button^ Create_button;
+	private: System::Windows::Forms::Button^ Edit_button;
+	private: System::Windows::Forms::Button^ Delete_button;
+	private: System::Windows::Forms::ListBox^ List;
+	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::Label^ Stealth_label;
+	private: System::Windows::Forms::Button^ OK_button;
+	private: System::Windows::Forms::Button^ Save_button;
+	private: System::Windows::Forms::Button^ Synchr;
+
+
+
+
+
 	protected:
 
 	protected:
 
 	protected:
 
-	private: System::Windows::Forms::Label^ Sigma_label;
-	private: System::Windows::Forms::Label^ zagolovok;
-
-	private: System::Windows::Forms::CheckBox^ randombox;
 
 
-	private: System::Windows::Forms::Label^ Result;
-	private: System::Windows::Forms::Button^ start_button;
-	private: System::Windows::Forms::Label^ Ideolog;
+
+
+
+
+
+
+
 
 
 
@@ -69,124 +90,169 @@ namespace GoGO {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
-			this->close_button = (gcnew System::Windows::Forms::Button());
-			this->Sigma_label = (gcnew System::Windows::Forms::Label());
-			this->zagolovok = (gcnew System::Windows::Forms::Label());
-			this->randombox = (gcnew System::Windows::Forms::CheckBox());
-			this->Result = (gcnew System::Windows::Forms::Label());
-			this->start_button = (gcnew System::Windows::Forms::Button());
-			this->Ideolog = (gcnew System::Windows::Forms::Label());
+			this->Close_button = (gcnew System::Windows::Forms::Button());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->Create_button = (gcnew System::Windows::Forms::Button());
+			this->Edit_button = (gcnew System::Windows::Forms::Button());
+			this->Delete_button = (gcnew System::Windows::Forms::Button());
+			this->List = (gcnew System::Windows::Forms::ListBox());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->Stealth_label = (gcnew System::Windows::Forms::Label());
+			this->OK_button = (gcnew System::Windows::Forms::Button());
+			this->Save_button = (gcnew System::Windows::Forms::Button());
+			this->Synchr = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
-			// close_button
+			// Close_button
 			// 
-			this->close_button->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->close_button->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->close_button->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->close_button->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15));
-			this->close_button->ForeColor = System::Drawing::Color::OrangeRed;
-			this->close_button->Location = System::Drawing::Point(935, 3);
-			this->close_button->Name = L"close_button";
-			this->close_button->Size = System::Drawing::Size(58, 33);
-			this->close_button->TabIndex = 0;
-			this->close_button->Text = L"X";
-			this->close_button->UseVisualStyleBackColor = false;
-			this->close_button->Click += gcnew System::EventHandler(this, &MyForm::close_button_Click);
+			this->Close_button->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->Close_button->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->Close_button->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->Close_button->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15));
+			this->Close_button->ForeColor = System::Drawing::Color::OrangeRed;
+			this->Close_button->Location = System::Drawing::Point(690, 9);
+			this->Close_button->Name = L"Close_button";
+			this->Close_button->Size = System::Drawing::Size(70, 33);
+			this->Close_button->TabIndex = 0;
+			this->Close_button->Text = L"X";
+			this->Close_button->UseVisualStyleBackColor = false;
+			this->Close_button->Click += gcnew System::EventHandler(this, &MyForm::close_button_Click);
 			// 
-			// Sigma_label
+			// label1
 			// 
-			this->Sigma_label->AutoSize = true;
-			this->Sigma_label->BackColor = System::Drawing::Color::Black;
-			this->Sigma_label->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->Sigma_label->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->Sigma_label->Location = System::Drawing::Point(916, 581);
-			this->Sigma_label->Name = L"Sigma_label";
-			this->Sigma_label->Size = System::Drawing::Size(77, 25);
-			this->Sigma_label->TabIndex = 1;
-			this->Sigma_label->Text = L"Sigma";
+			this->label1->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->label1->Location = System::Drawing::Point(30, 9);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(172, 23);
+			this->label1->TabIndex = 2;
+			this->label1->Text = L"Полный список";
 			// 
-			// zagolovok
+			// Create_button
 			// 
-			this->zagolovok->AutoSize = true;
-			this->zagolovok->BackColor = System::Drawing::Color::Black;
-			this->zagolovok->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 21.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->Create_button->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->zagolovok->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->zagolovok->Location = System::Drawing::Point(262, 26);
-			this->zagolovok->Name = L"zagolovok";
-			this->zagolovok->Size = System::Drawing::Size(513, 33);
-			this->zagolovok->TabIndex = 2;
-			this->zagolovok->Text = L"Выбор Страны для ШедевроХойки";
+			this->Create_button->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->Create_button->Location = System::Drawing::Point(34, 357);
+			this->Create_button->Name = L"Create_button";
+			this->Create_button->Size = System::Drawing::Size(106, 32);
+			this->Create_button->TabIndex = 3;
+			this->Create_button->Text = L"Создать";
+			this->Create_button->UseVisualStyleBackColor = true;
+			this->Create_button->Click += gcnew System::EventHandler(this, &MyForm::Create_button_Click);
 			// 
-			// randombox
+			// Edit_button
 			// 
-			this->randombox->AutoSize = true;
-			this->randombox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Edit_button->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->randombox->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->randombox->Location = System::Drawing::Point(40, 91);
-			this->randombox->Name = L"randombox";
-			this->randombox->Size = System::Drawing::Size(235, 24);
-			this->randombox->TabIndex = 3;
-			this->randombox->Text = L"Рандомить ли идеологию\?";
-			this->randombox->UseVisualStyleBackColor = true;
+			this->Edit_button->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->Edit_button->Location = System::Drawing::Point(157, 357);
+			this->Edit_button->Name = L"Edit_button";
+			this->Edit_button->Size = System::Drawing::Size(158, 32);
+			this->Edit_button->TabIndex = 4;
+			this->Edit_button->Text = L"Редактировать";
+			this->Edit_button->UseVisualStyleBackColor = true;
+			this->Edit_button->Click += gcnew System::EventHandler(this, &MyForm::Edit_button_Click);
 			// 
-			// Result
+			// Delete_button
 			// 
-			this->Result->AutoSize = true;
-			this->Result->BackColor = System::Drawing::Color::Black;
-			this->Result->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 21.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->Delete_button->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->Result->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->Result->Location = System::Drawing::Point(211, 474);
-			this->Result->Name = L"Result";
-			this->Result->Size = System::Drawing::Size(64, 33);
-			this->Result->TabIndex = 4;
-			this->Result->Text = L"хуй";
-			this->Result->Visible = false;
+			this->Delete_button->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->Delete_button->Location = System::Drawing::Point(331, 357);
+			this->Delete_button->Name = L"Delete_button";
+			this->Delete_button->Size = System::Drawing::Size(106, 32);
+			this->Delete_button->TabIndex = 5;
+			this->Delete_button->Text = L"Удалить";
+			this->Delete_button->UseVisualStyleBackColor = true;
+			this->Delete_button->Click += gcnew System::EventHandler(this, &MyForm::Delete_button_Click);
 			// 
-			// start_button
+			// List
 			// 
-			this->start_button->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->List->FormattingEnabled = true;
+			this->List->Location = System::Drawing::Point(34, 35);
+			this->List->Name = L"List";
+			this->List->Size = System::Drawing::Size(647, 303);
+			this->List->TabIndex = 1;
+			// 
+			// textBox1
+			// 
+			this->textBox1->Location = System::Drawing::Point(453, 382);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(203, 20);
+			this->textBox1->TabIndex = 6;
+			this->textBox1->Visible = false;
+			// 
+			// Stealth_label
+			// 
+			this->Stealth_label->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->start_button->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->start_button->Location = System::Drawing::Point(40, 148);
-			this->start_button->Name = L"start_button";
-			this->start_button->Size = System::Drawing::Size(162, 35);
-			this->start_button->TabIndex = 5;
-			this->start_button->Text = L"НА БЕРЛИН!";
-			this->start_button->UseVisualStyleBackColor = true;
-			this->start_button->Click += gcnew System::EventHandler(this, &MyForm::start_button_Click);
+			this->Stealth_label->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->Stealth_label->Location = System::Drawing::Point(449, 341);
+			this->Stealth_label->Name = L"Stealth_label";
+			this->Stealth_label->Size = System::Drawing::Size(172, 23);
+			this->Stealth_label->TabIndex = 7;
+			this->Stealth_label->Text = L"Введите данные";
+			this->Stealth_label->Visible = false;
 			// 
-			// Ideolog
+			// OK_button
 			// 
-			this->Ideolog->AutoSize = true;
-			this->Ideolog->BackColor = System::Drawing::Color::Black;
-			this->Ideolog->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 21.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->OK_button->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->Ideolog->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->Ideolog->Location = System::Drawing::Point(211, 428);
-			this->Ideolog->Name = L"Ideolog";
-			this->Ideolog->Size = System::Drawing::Size(64, 33);
-			this->Ideolog->TabIndex = 6;
-			this->Ideolog->Text = L"хуй";
-			this->Ideolog->Visible = false;
+			this->OK_button->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->OK_button->Location = System::Drawing::Point(675, 370);
+			this->OK_button->Name = L"OK_button";
+			this->OK_button->Size = System::Drawing::Size(51, 32);
+			this->OK_button->TabIndex = 8;
+			this->OK_button->Text = L"OK";
+			this->OK_button->UseVisualStyleBackColor = true;
+			this->OK_button->Click += gcnew System::EventHandler(this, &MyForm::OK_button_Click);
+			// 
+			// Save_button
+			// 
+			this->Save_button->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->Save_button->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->Save_button->Location = System::Drawing::Point(690, 53);
+			this->Save_button->Name = L"Save_button";
+			this->Save_button->Size = System::Drawing::Size(70, 32);
+			this->Save_button->TabIndex = 9;
+			this->Save_button->Text = L"Save";
+			this->Save_button->UseVisualStyleBackColor = true;
+			this->Save_button->Click += gcnew System::EventHandler(this, &MyForm::Save_button_Click);
+			// 
+			// Synchr
+			// 
+			this->Synchr->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->Synchr->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->Synchr->Location = System::Drawing::Point(687, 100);
+			this->Synchr->Name = L"Synchr";
+			this->Synchr->Size = System::Drawing::Size(70, 32);
+			this->Synchr->TabIndex = 10;
+			this->Synchr->Text = L"Synchr";
+			this->Synchr->UseVisualStyleBackColor = true;
+			this->Synchr->Click += gcnew System::EventHandler(this, &MyForm::Synchr_Click);
 			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackColor = System::Drawing::SystemColors::InactiveCaption;
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(997, 615);
-			this->Controls->Add(this->Ideolog);
-			this->Controls->Add(this->start_button);
-			this->Controls->Add(this->Result);
-			this->Controls->Add(this->randombox);
-			this->Controls->Add(this->zagolovok);
-			this->Controls->Add(this->Sigma_label);
-			this->Controls->Add(this->close_button);
+			this->ClientSize = System::Drawing::Size(772, 430);
+			this->Controls->Add(this->Synchr);
+			this->Controls->Add(this->Save_button);
+			this->Controls->Add(this->OK_button);
+			this->Controls->Add(this->Stealth_label);
+			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->Delete_button);
+			this->Controls->Add(this->Edit_button);
+			this->Controls->Add(this->Create_button);
+			this->Controls->Add(this->label1);
+			this->Controls->Add(this->List);
+			this->Controls->Add(this->Close_button);
 			this->ForeColor = System::Drawing::SystemColors::ButtonShadow;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
@@ -199,6 +265,11 @@ namespace GoGO {
 #pragma endregion
 	
 	private: System::Void close_button_Click(System::Object^ sender, System::EventArgs^ e);
-    private: System::Void start_button_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Delete_button_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Edit_button_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Create_button_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void OK_button_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Save_button_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Synchr_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }

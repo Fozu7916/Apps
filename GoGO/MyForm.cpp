@@ -1,11 +1,19 @@
 #include "MyForm.h"
 #include "time.h"
-
+#include <fstream>
 #include <Windows.h>
+#include <string>
+#include <vector>
+#include <msclr\marshal_cppstd.h>
+#include <msclr\auto_gcroot.h>
+#include <algorithm> 
 
+using namespace msclr::interop;
 using namespace GoGO;
 using namespace System;
 using namespace System::Windows::Forms;
+
+
 
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
     Application::EnableVisualStyles();
@@ -15,93 +23,84 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
     srand(time(NULL));
 }
 
+
+
+
+
+
+
+
 System::Void GoGO::MyForm::close_button_Click(System::Object^ sender, System::EventArgs^ e)
 {
     this->Close();
 };
-
-System::Void GoGO::MyForm::start_button_Click(System::Object^ sender, System::EventArgs^ e)
+System::Void GoGO::MyForm::Delete_button_Click(System::Object^ sender, System::EventArgs^ e)
 {
-    int CoountryNumber = 0;
-    int Country_count = 12;
-    int Ideology = 0;
-    CoountryNumber = rand()% Country_count;
-
-    switch (CoountryNumber)
+    if (List->SelectedIndex != -1)
     {
-    case 1:
-        Result->Visible = true;
-        Result->Text = "Канада";
-        break;
-    case 2:
-        Result->Visible = true;
-        Result->Text = "CCCР";
-        break;
-    case 3:
-        Result->Visible = true;
-        Result->Text = "США";
-        break;
-    case 4:
-        Result->Visible = true;
-        Result->Text = "Великобритания";
-        break;
-    case 5:
-        Result->Visible = true;
-        Result->Text = "Германия";
-        break;
-    case 6:
-        Result->Visible = true;
-        Result->Text = "Венгрия";
-        break;
-    case 7:
-        Result->Visible = true;
-        Result->Text = "Румыния";
-        break;
-    case 8:
-        Result->Visible = true;
-        Result->Text = "Италия";
-        break;
-    case 9:
-        Result->Visible = true;
-        Result->Text = "Турция";
-        break;
-    case 10:
-        Result->Visible = true;
-        Result->Text = "Япония";
-        break;
-    case 11:
-        Result->Visible = true;
-        Result->Text = "Франция";
-        break;
-    case 12:
-        Result->Visible = true;
-        Result->Text = "Польша";
-        break;
-    default:
-       break;
+        List->Items->RemoveAt(List->SelectedIndex);
     }
-    if (randombox->Checked)
+}
+System::Void GoGO::MyForm::Edit_button_Click(System::Object^ sender, System::EventArgs^ e)
+{
+    if (List->SelectedIndex != -1)
     {
-        Ideology = rand() % 4;
-        switch (Ideology)
+        List->Items->RemoveAt(List->SelectedIndex);
+        
+    }
+
+    Stealth_label->Visible = true;
+    textBox1->Visible = true;
+
+ 
+}
+System::Void GoGO::MyForm::Create_button_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+    List->Items->Add("123");
+}
+System::Void GoGO::MyForm::OK_button_Click(System::Object^ sender, System::EventArgs^ e)
+{
+    List->Items->Add(textBox1->Text);
+    Stealth_label->Visible = false;
+    textBox1->Visible = false;
+    textBox1->Text = "";
+   
+}
+System::Void GoGO::MyForm::Save_button_Click(System::Object^ sender, System::EventArgs^ e)
+{
+    std::ofstream file("output1.txt"); int x = 0;
+    if (file.is_open())
+    { 
+     for(int i = 0; i< List->Items->Count; i++)
+     { 
+         msclr::interop::marshal_context context;
+         String^ Element = List->Items[1]->ToString();
+         std::string result = context.marshal_as<std::string>(Element);
+         file << result + "\n";
+         x++;
+     }
+    }
+
+}
+System::Void GoGO::MyForm::Synchr_Click(System::Object^ sender, System::EventArgs^ e)
+{
+    // Используем std::string напрямую
+    std::string fileName = "output1.txt";
+
+    std::ifstream inputFile(fileName);
+    if (inputFile.is_open())
+    {
+        
+        std::string line;
+        while (std::getline(inputFile, line))
         {
-        case 1:
-            Ideolog->Visible = true;
-            Ideolog->Text = "Fashicst";
-            break;
-        case 2:
-            Ideolog->Visible = true;
-            Ideolog->Text = "Democrati";
-            break;
-        case 3:
-            Ideolog->Visible = true;
-            Ideolog->Text = "Communist-socialist";
-            break;
-        case 4:
-            Ideolog->Visible = true;
-            Ideolog->Text = "Neutraleteo";
-            break;
+            
+            msclr::auto_gcroot<String^> lineStr(msclr::interop::marshal_as<String^>(line));
+            List->Items->Add(lineStr);
+       
+        }
+        inputFile.close();
+
+       
         }
     }
-    
-};
