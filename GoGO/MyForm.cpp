@@ -43,11 +43,11 @@ System::Void GoGO::MyForm::Delete_button_Click(System::Object^ sender, System::E
 }
 System::Void GoGO::MyForm::Edit_button_Click(System::Object^ sender, System::EventArgs^ e)
 {
-    if (List->SelectedIndex != -1)
+   /* if (List->SelectedIndex != -1)
     {
         List->Items->RemoveAt(List->SelectedIndex);
         
-    }
+    }*/
 
     Stealth_label->Visible = true;
     textBox1->Visible = true;
@@ -60,7 +60,8 @@ System::Void GoGO::MyForm::Create_button_Click(System::Object^ sender, System::E
 }
 System::Void GoGO::MyForm::OK_button_Click(System::Object^ sender, System::EventArgs^ e)
 {
-    List->Items->Add(textBox1->Text);
+    /*List->Items->Add(textBox1->Text);*/
+    List->Items[List->SelectedIndex] = textBox1->Text;
     Stealth_label->Visible = false;
     textBox1->Visible = false;
     textBox1->Text = "";
