@@ -68,39 +68,34 @@ System::Void GoGO::MyForm::OK_button_Click(System::Object^ sender, System::Event
 }
 System::Void GoGO::MyForm::Save_button_Click(System::Object^ sender, System::EventArgs^ e)
 {
-    std::ofstream file("output1.txt"); int x = 0;
+    std::ofstream file("output1.txt");
     if (file.is_open())
-    { 
-     for(int i = 0; i< List->Items->Count; i++)
-     { 
-         msclr::interop::marshal_context context;
-         String^ Element = List->Items[1]->ToString();
-         std::string result = context.marshal_as<std::string>(Element);
-         file << result + "\n";
-         x++;
-     }
+    {
+        for (int i = 0; i < List->Items->Count; i++)
+        {
+            msclr::interop::marshal_context context;
+            String^ Element = List->Items[i]->ToString(); // Изменено с 'List->Items[x]' на 'List->Items[i]'
+            std::string result = context.marshal_as<std::string>(Element);
+            file << result + "\n";
+        }
+        file.close(); // Закрытие файла после записи
     }
-
 }
+
 System::Void GoGO::MyForm::Synchr_Click(System::Object^ sender, System::EventArgs^ e)
 {
-    // Используем std::string напрямую
     std::string fileName = "output1.txt";
-
     std::ifstream inputFile(fileName);
+    List->Items->Clear();
     if (inputFile.is_open())
     {
-        
         std::string line;
         while (std::getline(inputFile, line))
         {
-            
-            msclr::auto_gcroot<String^> lineStr(msclr::interop::marshal_as<String^>(line));
+            // Здесь используем marshal_as напрямую, без auto_gcroot
+            String^ lineStr = msclr::interop::marshal_as<String^>(line);
             List->Items->Add(lineStr);
-       
         }
-        inputFile.close();
-
-       
-        }
+        inputFile.close(); // Закрытие файла
     }
+}
