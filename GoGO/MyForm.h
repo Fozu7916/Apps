@@ -21,9 +21,12 @@ namespace GoGO {
 			//
 			//TODO: добавьте код конструктора
 			//
-			
+			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			
 		}
+	private: void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
+		Synchr_Click(sender, e);
+	}
 
 	protected:
 		/// <summary>
@@ -50,7 +53,7 @@ namespace GoGO {
 	private: System::Windows::Forms::Label^ Stealth_label;
 	private: System::Windows::Forms::Button^ OK_button;
 	private: System::Windows::Forms::Button^ Save_button;
-	private: System::Windows::Forms::Button^ Synchr;
+
 
 
 
@@ -100,7 +103,6 @@ namespace GoGO {
 			this->Stealth_label = (gcnew System::Windows::Forms::Label());
 			this->OK_button = (gcnew System::Windows::Forms::Button());
 			this->Save_button = (gcnew System::Windows::Forms::Button());
-			this->Synchr = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// Close_button
@@ -222,19 +224,6 @@ namespace GoGO {
 			this->Save_button->UseVisualStyleBackColor = true;
 			this->Save_button->Click += gcnew System::EventHandler(this, &MyForm::Save_button_Click);
 			// 
-			// Synchr
-			// 
-			this->Synchr->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->Synchr->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->Synchr->Location = System::Drawing::Point(687, 100);
-			this->Synchr->Name = L"Synchr";
-			this->Synchr->Size = System::Drawing::Size(70, 32);
-			this->Synchr->TabIndex = 10;
-			this->Synchr->Text = L"Synchr";
-			this->Synchr->UseVisualStyleBackColor = true;
-			this->Synchr->Click += gcnew System::EventHandler(this, &MyForm::Synchr_Click);
-			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -242,7 +231,6 @@ namespace GoGO {
 			this->BackColor = System::Drawing::SystemColors::InactiveCaption;
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(772, 430);
-			this->Controls->Add(this->Synchr);
 			this->Controls->Add(this->Save_button);
 			this->Controls->Add(this->OK_button);
 			this->Controls->Add(this->Stealth_label);

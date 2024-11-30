@@ -20,7 +20,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
     Application::SetCompatibleTextRenderingDefault(false);
     Application::Run(gcnew MyForm);
     return 0;
-    srand(time(NULL));
+    srand(time(NULL)); 
 }
 
 
@@ -97,5 +97,5 @@ System::Void GoGO::MyForm::Synchr_Click(System::Object^ sender, System::EventArg
             List->Items->Add(lineStr);
         }
         inputFile.close(); // Закрытие файла
-    }
+   }
 }
