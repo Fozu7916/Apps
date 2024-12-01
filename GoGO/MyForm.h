@@ -112,9 +112,9 @@ namespace GoGO {
 			this->Close_button->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->Close_button->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15));
 			this->Close_button->ForeColor = System::Drawing::Color::OrangeRed;
-			this->Close_button->Location = System::Drawing::Point(690, 9);
+			this->Close_button->Location = System::Drawing::Point(620, -1);
 			this->Close_button->Name = L"Close_button";
-			this->Close_button->Size = System::Drawing::Size(70, 33);
+			this->Close_button->Size = System::Drawing::Size(51, 33);
 			this->Close_button->TabIndex = 0;
 			this->Close_button->Text = L"X";
 			this->Close_button->UseVisualStyleBackColor = false;
@@ -125,7 +125,7 @@ namespace GoGO {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->label1->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->label1->Location = System::Drawing::Point(30, 9);
+			this->label1->Location = System::Drawing::Point(12, 9);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(172, 23);
 			this->label1->TabIndex = 2;
@@ -136,7 +136,7 @@ namespace GoGO {
 			this->Create_button->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->Create_button->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->Create_button->Location = System::Drawing::Point(34, 357);
+			this->Create_button->Location = System::Drawing::Point(12, 358);
 			this->Create_button->Name = L"Create_button";
 			this->Create_button->Size = System::Drawing::Size(106, 32);
 			this->Create_button->TabIndex = 3;
@@ -149,7 +149,7 @@ namespace GoGO {
 			this->Edit_button->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->Edit_button->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->Edit_button->Location = System::Drawing::Point(157, 357);
+			this->Edit_button->Location = System::Drawing::Point(124, 358);
 			this->Edit_button->Name = L"Edit_button";
 			this->Edit_button->Size = System::Drawing::Size(158, 32);
 			this->Edit_button->TabIndex = 4;
@@ -162,7 +162,7 @@ namespace GoGO {
 			this->Delete_button->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->Delete_button->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->Delete_button->Location = System::Drawing::Point(331, 357);
+			this->Delete_button->Location = System::Drawing::Point(288, 358);
 			this->Delete_button->Name = L"Delete_button";
 			this->Delete_button->Size = System::Drawing::Size(106, 32);
 			this->Delete_button->TabIndex = 5;
@@ -173,16 +173,16 @@ namespace GoGO {
 			// List
 			// 
 			this->List->FormattingEnabled = true;
-			this->List->Location = System::Drawing::Point(34, 35);
+			this->List->Location = System::Drawing::Point(12, 35);
 			this->List->Name = L"List";
-			this->List->Size = System::Drawing::Size(647, 303);
+			this->List->Size = System::Drawing::Size(583, 303);
 			this->List->TabIndex = 1;
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(453, 382);
+			this->textBox1->Location = System::Drawing::Point(404, 370);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(203, 20);
+			this->textBox1->Size = System::Drawing::Size(177, 20);
 			this->textBox1->TabIndex = 6;
 			this->textBox1->Visible = false;
 			// 
@@ -191,7 +191,7 @@ namespace GoGO {
 			this->Stealth_label->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->Stealth_label->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->Stealth_label->Location = System::Drawing::Point(449, 341);
+			this->Stealth_label->Location = System::Drawing::Point(400, 344);
 			this->Stealth_label->Name = L"Stealth_label";
 			this->Stealth_label->Size = System::Drawing::Size(172, 23);
 			this->Stealth_label->TabIndex = 7;
@@ -203,7 +203,7 @@ namespace GoGO {
 			this->OK_button->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->OK_button->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->OK_button->Location = System::Drawing::Point(675, 370);
+			this->OK_button->Location = System::Drawing::Point(616, 358);
 			this->OK_button->Name = L"OK_button";
 			this->OK_button->Size = System::Drawing::Size(51, 32);
 			this->OK_button->TabIndex = 8;
@@ -216,7 +216,7 @@ namespace GoGO {
 			this->Save_button->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->Save_button->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->Save_button->Location = System::Drawing::Point(690, 53);
+			this->Save_button->Location = System::Drawing::Point(601, 38);
 			this->Save_button->Name = L"Save_button";
 			this->Save_button->Size = System::Drawing::Size(70, 32);
 			this->Save_button->TabIndex = 9;
@@ -230,7 +230,7 @@ namespace GoGO {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::InactiveCaption;
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(772, 430);
+			this->ClientSize = System::Drawing::Size(679, 402);
 			this->Controls->Add(this->Save_button);
 			this->Controls->Add(this->OK_button);
 			this->Controls->Add(this->Stealth_label);
@@ -251,7 +251,7 @@ namespace GoGO {
 
 		}
 #pragma endregion
-	
+	//обьявление функций
 	private: System::Void close_button_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void Delete_button_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void Edit_button_Click(System::Object^ sender, System::EventArgs^ e);
@@ -259,5 +259,6 @@ namespace GoGO {
 	private: System::Void OK_button_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void Save_button_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void Synchr_Click(System::Object^ sender, System::EventArgs^ e);
+
 };
 }
