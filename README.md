@@ -1,6 +1,9 @@
 # GoGO
 # GoGO
 How to use app?
+I:
+dowload .exe file from EXE branch
+II:
 1. download zip
 2. Unarchive
 3. Open .sln at Microsoft Studio
