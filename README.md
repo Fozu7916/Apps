@@ -20,4 +20,8 @@ II:
 
 ![image](https://github.com/user-attachments/assets/aa9af2c1-8683-4acb-9b48-b3546eba5d0e)
 
+8.Discrod - bot
+
+![image](https://github.com/user-attachments/assets/335a5799-1537-45ca-a58d-12342182a3ff)
+
 
