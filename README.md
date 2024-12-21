@@ -13,4 +13,5 @@ II:
 6. Master - ветка: Тест(см.рисунок)
 ![image](https://github.com/user-attachments/assets/df637e73-9db6-4b9c-a007-3f9d8e442506)
 7. Another-C-Sharp-classic - ветка(см.рисунок)
-8. ![image](https://github.com/user-attachments/assets/6fbddf2f-153b-48c4-a035-c07f32cf3cde)
+![image](https://github.com/user-attachments/assets/e40e03b7-db23-4662-99d9-e934f7255f8d)
+
